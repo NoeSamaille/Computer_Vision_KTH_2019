@@ -1,6 +1,6 @@
 % Part 1 - Difference operators - Question 1
 
-% 
+
 % tools = few256;
 % 
 % dx_simple = [-1 1; 0 0];
@@ -94,7 +94,9 @@
 
 % Part 4 - Computing differential geometry descriptors - Questions 4 to 6
 
+
 % Test of third order masks
+
 dx_mask = [0 0 0 0 0; 0 0 0 0 0; 0 -0.5 0 0.5 0; 0 0 0 0 0; 0 0 0 0 0];
 dy_mask = dx_mask';
 dxx_mask = [0 0 0 0 0; 0 0 0 0 0; 0 1 -2 1 0; 0 0 0 0 0; 0 0 0 0 0];
@@ -103,7 +105,6 @@ dxxx_mask = conv2(dx_mask, dxx_mask, 'same');
 dxxy_mask = conv2(dxx_mask, dy_mask, 'same');
 dxyy_mask = conv2(dx_mask, dyy_mask, 'same');
 dyyy_mask = conv2(dy_mask, dyy_mask, 'same');
-
 [x y] = meshgrid(-5:5, -5:5)
 filter2(dxxx_mask, x.^3, 'valid')
 filter2(dxx_mask, x.^3, 'valid')
@@ -123,5 +124,28 @@ for i=1:length(scales)
     title(['t:' num2str(scales(i))]);
 end
 
+tools = few256;
+scales = [0.0001 1.0 4.0 16.0 32.0 64.0];
+
+figure();
+for i=1:length(scales)
+    subplot(2, length(scales)/2, i);
+    showgrey(Lvvvtilde(discgaussfft(tools, scales(i)), 'same') < 0)
+    title(['t:' num2str(scales(i))]);
+end
+
+% Question 5
+
+figure();
+for i=1:length(scales)
+%     subplot(2, length(scales)/2, i);
+%     Lvvt = Lvvtilde(discgaussfft(house, scales(i)), 'same');
+%     size(Lvvt)
+%     Lvvvt = Lvvvtilde(discgaussfft(tools, scales(i)), 'same');
+%     size(Lvvvt)
+%     res = Lvvtilde(discgaussfft(house, scales(i)), 'same') == 0;
+%     
+%     title(['t:' num2str(scales(i))]);
+end
 
 
