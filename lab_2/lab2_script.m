@@ -110,9 +110,18 @@ filter2(dxx_mask, x.^3, 'valid')
 filter2(dxxy_mask, x.^2.*y, 'valid')
 
 % Question 4
+
 house = godthem256;
-contour(Lvvtilde(discgaussfft(house, 16.0), 'same'), [0 0])
-axis('image') 
-axis('ij')
+scales = [0.0001 1.0 4.0 16.0 32.0 64.0];
+
+figure();
+for i=1:length(scales)
+    subplot(2, length(scales)/2, i);
+    contour(Lvvtilde(discgaussfft(house, scales(i)), 'same'), [0 0])
+    axis('image') 
+    axis('ij')
+    title(['t:' num2str(scales(i))]);
+end
+
 
 
