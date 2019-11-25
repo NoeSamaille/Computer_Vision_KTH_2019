@@ -1,8 +1,8 @@
-function pixels = Lv(inpic, shape, der_op, smooth)
+function pixels = Lv(inpic, shape, der_op)
 
     if strcmp(der_op, 'centered')
         % Central differences
-        dxmask = [0 0 0; -0.5 0 0.5; 0 0 0];
+        dxmask = [0 0 0 0 0; 0 0 0 0 0; 0 -0.5 0 0.5 0; 0 0 0 0 0; 0 0 0 0 0];
         dymask = dxmask';
     elseif strcmp(der_op, 'roberts')
         % Robert's operator
@@ -22,13 +22,8 @@ function pixels = Lv(inpic, shape, der_op, smooth)
         shape = 'same';
     end
 
-    if (smooth == true)
-        % Apply gaussian smoothing
-        scale = 1.0;
-        inpic = gaussfft(inpic, scale);
-    end
-
     Lx = filter2(dxmask, inpic, shape);
     Ly = filter2(dymask, inpic, shape);
     pixels = Lx.^2 + Ly.^2;
+    
 end
