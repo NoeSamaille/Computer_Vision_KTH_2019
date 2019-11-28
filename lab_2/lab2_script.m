@@ -194,14 +194,27 @@
 % title('Home: t=4, threshold=7');
 
 
-% Part 5 - Hough transform - Questions 8 to 10
+% Part 6 - Hough transform - Questions 8 to 10
 
 
-nrho = 500;
-ntheta = 181;
+% % Question 8
+% testimage1 = triangle128;
+% nrho = 200;
+% ntheta = 181;
+% houghedgeline(testimage1, 6, 1, nrho, ntheta, 3, 2);
 
-testimage1 = triangle128;
-houghedgeline(testimage1, 4, 8, nrho, ntheta, 5, 1);
+% % Question 9, set accumulator update to 1 in houghline
+% nrho = 400;
+% ntheta = 181;
+% houghedgeline(houghtest256, 3, 10, nrho, ntheta, 9, 1);
+% houghedgeline(few256, 8, 8, nrho, ntheta, 12, 1);
+% houghedgeline(phonecalc256, 3, 18, nrho, ntheta, 13, 1);
+% houghedgeline(godthem256, 5, 15, nrho, ntheta, 19, 1);
 
-testimage2 = houghtest256;
-houghedgeline(testimage2, 4, 8, nrho, ntheta, 9, 1);
+% % Question 10, set accumulator update to linear or log in houghline
+% nrho = 400;
+% ntheta = 181;
+% houghedgeline(houghtest256, 2, 10, nrho, ntheta, 9, 1);
+% houghedgeline(few256, 5, 8, nrho, ntheta, 12, 1);
+% houghedgeline(phonecalc256, 3, 18, nrho, ntheta, 13, 1);
+% houghedgeline(godthem256, 4, 15, nrho, ntheta, 19, 1);

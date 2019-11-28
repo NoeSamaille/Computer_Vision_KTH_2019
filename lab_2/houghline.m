@@ -45,19 +45,21 @@ function [linepar, acc] = ...
                 for i = 1:ntheta
                     % Compute rho for each theta value
                     rho = x*cos(thetas(i)) + y*sin(thetas(i));
-                    if verbose >= 2
-                        fprintf('rho: %g\n', rho)
-                    end
                     % Compute index values in the accumulator space
                     j = find(rhos < rho, 1, 'last');
                     % Update the accumulator
                     acc(j, i) = acc(j, i) + 1;
+%                     acc(j, i) = acc(j, i) + log(mag_xy); % Question 10
+%                     acc(j, i) = acc(j, i) + mag_xy; % Question 10
                 end
             end
         end
     end
+    if verbose >= 2
+        figure();
+        showgrey(acc);
+    end
     % Extract local maxima from the accumulator
-    acc = binsepsmoothiter(acc, 0, 10);
     [pos, value] = locmax8(acc);
     [~, indexvector] = sort(value);
     nmaxima = size(value, 1);
@@ -71,9 +73,12 @@ function [linepar, acc] = ...
         rhoidxacc = pos(indexvector(nmaxima - idx + 1), 1);
         thetaidxacc = pos(indexvector(nmaxima - idx + 1), 2);
         linepar(idx, :) = [thetas(thetaidxacc) rhos(rhoidxacc)];
+        if verbose >= 2
+            fprintf('Line\n - rho: %g\n - theta %g)\n', rhos(rhoidxacc), thetas(thetaidxacc))
+        end
     end
     % Overlay these curves on the gradient magnitude image
-    if verbose >= 1
+    if verbose >= 2
         drawlines(linepar, magnitude);
     end
 end

@@ -11,6 +11,7 @@ function edgecurves = extractedge(inpic, scale, threshold, shape)
     Lv_mask = (L_v > threshold) - 0.1;
     edgecurves = thresholdcurves(edgecurves, Lv_mask);
     
+    figure();
     overlaycurves(inpic, edgecurves)
 
 end
