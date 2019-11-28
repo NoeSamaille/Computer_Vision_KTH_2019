@@ -147,6 +147,7 @@
 
 % Part 5 - Extraction of edge segments - Question 7
 
+
 % % Chose best scale for 'tools' image
 % scales = [1.0 2.0 4.0 6.0 8.0 10.0 12.0 16.0];
 % figure();
@@ -183,12 +184,24 @@
 %     title(['threshold:' num2str(thresholds(i))]);
 % end
 % 
-% % Show best results
+% Show best results
 % figure();
 % subplot(1, 2, 1);
-% extractedge(few256, 8.0, 20, 'same');
-% title('Tools: t=8, threshold=7');
+% extractedge(few256, 8.0, 26, 'same');
+% title('Tools: t=8, threshold=26');
 % subplot(1, 2, 2);
 % extractedge(godthem256, 4.0, 7, 'same');
 % title('Home: t=4, threshold=7');
 
+
+% Part 5 - Hough transform - Questions 8 to 10
+
+
+nrho = 500;
+ntheta = 181;
+
+testimage1 = triangle128;
+houghedgeline(testimage1, 4, 8, nrho, ntheta, 5, 1);
+
+testimage2 = houghtest256;
+houghedgeline(testimage2, 4, 8, nrho, ntheta, 9, 1);
