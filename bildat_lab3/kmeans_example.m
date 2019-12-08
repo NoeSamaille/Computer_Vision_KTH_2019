@@ -1,15 +1,15 @@
-pkg load image
-pkg load statistics
-addpath Functions
-addpath bildat_lab3
+% pkg load image
+% pkg load statistics
+% addpath Functions
+% addpath bildat_lab3
 
-K = 8;               % number of clusters used
+K = 10;               % number of clusters used
 L = 10;              % number of iterations
 seed = 14;           % seed used for random initialization
 scale_factor = 1.0;  % image downscale factor
 image_sigma = 1.0;   % image preblurring scale
 
-I = imread('bildat_lab3/orange.jpg');
+I = imread('bildat_lab3/tiger1.jpg');
 I = imresize(I, scale_factor);
 Iback = I;
 d = 2*ceil(image_sigma*2) + 1;

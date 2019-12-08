@@ -1,7 +1,7 @@
-scale_factor = 0.5;       % image downscale factor
-spatial_bandwidth = 10.0;  % spatial bandwidth
+scale_factor = 0.7;       % image downscale factor
+spatial_bandwidth = 5.0;  % spatial bandwidth
 colour_bandwidth = 5.0;   % colour bandwidth
-num_iterations = 40;      % number of mean-shift iterations
+num_iterations = 100;      % number of mean-shift iterations
 image_sigma = 1.0;        % image preblurring scale
 
 I = imread('tiger1.jpg');
@@ -18,5 +18,3 @@ imwrite(Inew,'result/meanshift1.png')
 imwrite(I,'result/meanshift2.png')
 subplot(1,2,1); imshow(Inew);
 subplot(1,2,2); imshow(I);
-
-
