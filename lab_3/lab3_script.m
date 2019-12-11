@@ -4,11 +4,11 @@
 
 % Part 4: Normalized cut
 
-colour_bandwidth = 20.0; % color bandwidth
+colour_bandwidth = 10.0; % color bandwidth
 radius = 3;              % maximum neighbourhood distance
-ncuts_thresh = 0.06;        % cutting threshold
-min_area = 200;          % minimum area of segment
-max_depth = 20;           % maximum splitting depth
+ncuts_thresh = 2;        % cutting threshold
+min_area = 300;          % minimum area of segment
+max_depth = 8;           % maximum splitting depth
 scale_factor = 0.4;      % image downscale factor
 image_sigma = 2.0;       % image preblurring scale
 
