@@ -19,8 +19,8 @@ function norm_cut(img, colour_bandwidth, radius, ncuts_thresh, min_area, max_dep
     segm = norm_cuts_segm(I, colour_bandwidth, radius, ncuts_thresh, min_area, max_depth);
     Inew = mean_segments(Iback, segm);
     I = overlay_bounds(Iback, segm);
-    imwrite(Inew, ['result/norm/' img '_cb' num2str(colour_bandwidth) '_rad' num2str(radius) '_nct' num2str(ncuts_thresh) '_minar' num2str(min_area) '_md' num2str(max_depth) '.png'])
-    imwrite(I, ['result/norm/' img '_cb' num2str(colour_bandwidth) '_rad' num2str(radius) '_nct' num2str(ncuts_thresh) '_minar' num2str(min_area) '_md' num2str(max_depth) 'seg.png'])
+    imwrite(Inew, ['result/norm/' img '_cb' strrep(num2str(colour_bandwidth), '.', '_') '_rad' strrep(num2str(radius), '.', '_') '_nct' strrep(num2str(ncuts_thresh), '.', '_') '_minar' strrep(num2str(min_area), '.', '_') '_md' strrep(num2str(max_depth), '.', '_') '.png'])
+    imwrite(I, ['result/norm/' img '_cb' strrep(num2str(colour_bandwidth), '.', '_') '_rad' strrep(num2str(radius), '.', '_') '_nct' strrep(num2str(ncuts_thresh), '.', '_') '_minar' strrep(num2str(min_area), '.', '_') '_md' strrep(num2str(max_depth), '.', '_') 'seg.png'])
     figure();
     subplot(1,2,1); imshow(Inew);
     subplot(1,2,2); imshow(I);
