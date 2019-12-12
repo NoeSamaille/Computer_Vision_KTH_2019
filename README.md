@@ -15,4 +15,12 @@ This repository contains my laboration code and reports for KTH course DD2423 Im
   + `lab2/houghline.m`: implementation of function `houghline` that uses Hough transform to determine linear approximation of a given set of curves.
   + `lab2/houghedgeline.m`: implementation of function `houghedgeline` that detects edges in a given image then applies Hough transform to those edges.
   + `lab2/drawlines.m`: function that shows a set of lines on a given image (used to show results of `houghline`).
-  + `lab1/lab2_report.pdf`: written answer sheet for lab 2.
+  + `lab2/lab2_report.pdf`: written answer sheet for lab 2.
++ `lab3`: Code and report for lab 3
+  + `lab3/lab3_script.m`: script containing code for the 2 last parts.
+  + `lab3/mixture_prob.m`: implementation of function `mixture_prob`, computing mixture of gaussians using Expectation/Maximisation algorithm.
+  + `lab3/kmeans_segm.m`: implementation of K-means clustering algorithm for image segmentation.
+  + `lab3/kmeans_example.m`: code for using the K-means segmentation.
+  + `lab3/norm_cut.m`: function to use the normalized cut segmentation and saving results.
+  + `lab3/graph_cut.m`: function to use the graph cut segmentation and saving results.
+  + `lab3/lab3_report.pdf`: written answer sheet for lab 2.
