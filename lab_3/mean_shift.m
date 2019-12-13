@@ -1,4 +1,4 @@
-function ncut_ex
+function mean_shift
   scale_factor = 0.6;       % image downscale factor
   spatial_bandwidth = 5.0;  % spatial bandwidth
   colour_bandwidth = 100.0;   % colour bandwidth
