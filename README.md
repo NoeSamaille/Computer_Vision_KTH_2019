@@ -17,10 +17,12 @@ This repository contains my laboration code and reports for KTH course DD2423 Im
   + `lab2/drawlines.m`: function that shows a set of lines on a given image (used to show results of `houghline`).
   + `lab2/lab2_report.pdf`: written answer sheet for lab 2.
 + `lab3`: Code and report for lab 3
-  + `lab3/lab3_script.m`: script containing code for the 2 last parts.
+  + `lab3/lab3_script.m`: script containing code for the 4 parts.
   + `lab3/mixture_prob.m`: implementation of function `mixture_prob`, computing mixture of gaussians using Expectation/Maximisation algorithm.
   + `lab3/kmeans_segm.m`: implementation of K-means clustering algorithm for image segmentation.
-  + `lab3/kmeans_example.m`: code for using the K-means segmentation.
+  + `lab3/kmeans_init.m`: function called by `lab3_script.m` for comparing two approaches for initializing cluster centers.
+  + `lab3/display_kmeans.m`: function displaying k-means clustering applied to all the lab images as shown in the report.
+  + `lab3/mean_shift.m`: same code as `mean_shift_example.m` but made callable as a function for `lab3_script.m`.
   + `lab3/norm_cut.m`: function to use the normalized cut segmentation and saving results.
   + `lab3/graph_cut.m`: function to use the graph cut segmentation and saving results.
   + `lab3/lab3_report.pdf`: written answer sheet for lab 2.

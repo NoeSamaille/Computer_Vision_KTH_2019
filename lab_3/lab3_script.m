@@ -17,7 +17,7 @@
 
 % Part 3: Mean-shift segmentation
 % It is basically a call to mean_shift_example.m
-% ncut_ex();
+% mean_shift();
 
 % Part 4: Normalized cut
 
